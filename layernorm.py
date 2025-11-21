@@ -56,7 +56,7 @@ if __name__ == "__main__":
 
     res = layernorm_ref(x, w)
 
-    ln = torch.nn.LayerNorm(3, elementwise_affine=True) #not learnable
+    ln = torch.nn.LayerNorm(3, elementwise_affine=True) #learnable
     ln.weight.data = w.clone()
     ln.bias.data = torch.zeros(3) #no bias
     exp = ln(x)
